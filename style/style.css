@@ -6,7 +6,19 @@ body {
   margin: 0;
   font-family: "Work Sans", sans-serif;
 }
+#startButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
+#startButton:hover {
+  background-color: #45a049;
+}
 .container {
   height: 100vh;
   width: 100vh;
