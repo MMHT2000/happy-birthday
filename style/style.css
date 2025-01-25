@@ -9,10 +9,10 @@ body {
 
 .container {
   height: 100vh;
-  width: 100vh;
+  width: 100vw;
   margin: 0 auto;
   text-align: center;
-  visibility: hidden;
+  visibility: visible; /* Changed from hidden to visible for testing */
   position: relative;
   overflow: hidden;
 }
@@ -127,7 +127,6 @@ body {
   width: 80px;
   top: -35px;
   left: 41.5%;
-  /* transform: scale(0.1); */
 }
 
 .baloons img {
@@ -156,60 +155,6 @@ body {
   z-index: -1;
 }
 
-.eight svg:nth-child(1) {
-  top: 7vh;
-  left: 5vw;
-  fill: #bd6ecf;
-}
-
-.eight svg:nth-child(2) {
-  top: 23vh;
-  left: 35vw;
-  fill: #7dd175;
-}
-
-.eight svg:nth-child(3) {
-  top: 33vh;
-  left: 23vw;
-  fill: #349d8b;
-}
-
-.eight svg:nth-child(4) {
-  top: 43vh;
-  left: 57vw;
-  fill: #347a9d;
-}
-
-.eight svg:nth-child(5) {
-  top: 68vh;
-  left: 7vw;
-  fill: #c66053;
-}
-
-.eight svg:nth-child(6) {
-  top: 42vh;
-  left: 77vw;
-  fill: #bfaa40;
-}
-
-.eight svg:nth-child(7) {
-  top: 68vh;
-  left: 83vw;
-  fill: #e3bae8;
-}
-
-.eight svg:nth-child(8) {
-  top: 86vh;
-  left: 37vw;
-  fill: #8762cb;
-}
-
-.eight svg:nth-child(9) {
-  top: 94vh;
-  left: 87vw;
-  fill: #9a90da;
-}
-
 .wish-hbd {
   font-size: 3em;
   margin: 0;
@@ -227,9 +172,25 @@ body {
   font-weight: lighter;
 }
 
-#replay {
-  z-index: 3;
+#playMusic {
+  display: block;
+  position: fixed; /* Fixed ensures the button stays in the viewport */
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 100; /* Increased to ensure it's above other elements */
+}
+
+#playMusic:hover {
+  background-color: #0056b3;
 }
 
 /* Media Queries */
@@ -296,24 +257,4 @@ body {
     font-size: 1.5rem;
     font-weight: lighter;
   }
-  #playMusic {
-  display: block;
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 10px 20px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 10;
-}
-
-#playMusic:hover {
-  background-color: #0056b3;
-}
 }
