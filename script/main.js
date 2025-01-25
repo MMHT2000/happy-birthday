@@ -1,9 +1,11 @@
-// Import the data to customize and insert them into page
+// Fetching data from customize.json
 const fetchData = () => {
   fetch("customize.json")
     .then(data => data.json())
     .then(data => {
       dataArr = Object.keys(data);
+      
+      // Looping through data and inserting it into the DOM
       dataArr.map(customData => {
         if (data[customData] !== "") {
           if (customData === "imagePath") {
@@ -15,30 +17,49 @@ const fetchData = () => {
           }
         }
 
-        // Check if the iteration is over
-        // Run amimation if so
-        if ( dataArr.length === dataArr.indexOf(customData) + 1 ) {
-          animationTimeline();
+        // Check if the iteration is over and run animation when data is fully loaded
+        if (dataArr.length === dataArr.indexOf(customData) + 1) {
+          animationTimeline(); // Trigger animation timeline
 
           const backgroundMusic = document.getElementById("backgroundMusic");
-          backgroundMusic.play();
+          backgroundMusic.play(); // Play background music after animation
         } 
       });
     });
 };
-// Animation Timeline
+
+// Function to play background music when the page loads
+let musicPlaying = false;
+const backgroundMusic = document.getElementById("backgroundMusic");
+
+const toggleMusic = () => {
+  if (musicPlaying) {
+    backgroundMusic.pause();
+  } else {
+    backgroundMusic.play();
+  }
+  musicPlaying = !musicPlaying;
+};
+
+// Function to add sound effects when changing content
+const playSoundEffect = (soundFile) => {
+  const audio = new Audio(soundFile);
+  audio.play();
+};
+
+// Enhanced animation timeline with smoother animations and effects
 const animationTimeline = () => {
-  // Spit chars that needs to be animated individually
   const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
   const hbd = document.getElementsByClassName("wish-hbd")[0];
 
+  // Split characters for animation
   textBoxChars.innerHTML = `<span>${textBoxChars.innerHTML
     .split("")
-    .join("</span><span>")}</span`;
+    .join("</span><span>")}</span>`;
 
   hbd.innerHTML = `<span>${hbd.innerHTML
     .split("")
-    .join("</span><span>")}</span`;
+    .join("</span><span>")}</span>`;
 
   const ideaTextTrans = {
     opacity: 0,
@@ -89,7 +110,6 @@ const animationTimeline = () => {
     .from(".three", 0.7, {
       opacity: 0,
       y: 10
-      // scale: 0.7
     })
     .to(
       ".three",
@@ -234,7 +254,6 @@ const animationTimeline = () => {
       {
         opacity: 0,
         y: -50,
-        // scale: 0.3,
         rotation: 150,
         skewX: "30deg",
         ease: Elastic.easeOut.config(1, 0.5)
@@ -294,9 +313,6 @@ const animationTimeline = () => {
       "+=1"
     );
 
-  // tl.seek("currentStep");
-  // tl.timeScale(2);
-
   // Restart Animation on click
   const replyBtn = document.getElementById("replay");
   replyBtn.addEventListener("click", () => {
@@ -304,5 +320,5 @@ const animationTimeline = () => {
   });
 };
 
-// Run fetch and animation in sequence
+// Run fetchData and animation in sequence
 fetchData();
