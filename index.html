@@ -1,152 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Happy Birthday!!! :)</title>
-  <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400" rel="stylesheet">
-  <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
-  <link rel="stylesheet" href="style/style.css">
+  <title>Birthday Greeting</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+
+  <!-- Main Container -->
   <div class="container">
+    <!-- Greeting Section -->
     <div class="one">
-      <h1 class="one">
-        <span data-node-name="greeting">Hey</span>
-        <span data-node-name="name">Fariha Afsana Shupti</span>
-      </h1>
-      <p class="two" data-node-name="greetingText">I really like your name btw!</p>
+      <h1 class="greeting" data-node-name="greeting"></h1>
+      <h2 class="name" data-node-name="name"></h2>
+      <p class="greeting-text" data-node-name="greetingText"></p>
     </div>
+
+    <!-- Birthday Message Section -->
+    <div class="two">
+      <p class="wish-text" data-node-name="wishText"></p>
+      <img src="" class="profile-img" data-node-name="imagePath" alt="Birthday Person" />
+      <p class="text1" data-node-name="text1"></p>
+    </div>
+
+    <!-- Chatbox Section -->
     <div class="three">
-      <p data-node-name="text1">It's your birthday!!! :D</p>
+      <div class="hbd-chatbox" data-node-name="textInChatBox"></div>
     </div>
+
+    <!-- Message Section -->
     <div class="four">
-      <div class="text-box">
-        <p class="hbd-chatbox" data-node-name="textInChatBox">Happy birthday to you!!</p>
-        <p class="fake-btn" data-node-name="sendButtonLabel">Send</p>
-      </div>
+      <button class="fake-btn" data-node-name="sendButtonLabel"></button>
     </div>
+
+    <!-- Ideas Section -->
     <div class="five">
-      <p class="idea-1" data-node-name="text2">That's what I was going to do.</p>
-      <p class="idea-2" data-node-name="text3">But then I stopped.</p>
-      <p class="idea-3">
-        <span data-node-name="text4">I realised, I wanted to do something</span>
-        <strong data-node-name="text4Adjective">special</strong>.</p>
-      <p class="idea-4" data-node-name="text5Entry">Because,</p>
-      <p class="idea-5">
-        <span data-node-name="text5Content">You are Special</span>
-        <span class="smiley" data-node-name="smiley">:)</span>
+      <p class="idea-1" data-node-name="text2"></p>
+      <p class="idea-2" data-node-name="text3"></p>
+      <p class="idea-3" data-node-name="text4"></p>
+      <p class="idea-4" data-node-name="text5Entry"></p>
+      <p class="idea-5" data-node-name="text5Content">
+        <span class="smiley" data-node-name="smiley"></span>
       </p>
-      <p class="idea-6">
-        <span data-node-name="bigTextPart1">S</span>
-        <span data-node-name="bigTextPart2">O</span>
-      </p>
+      <p class="idea-6" data-node-name="bigTextPart1"></p>
+      <p class="idea-6" data-node-name="bigTextPart2"></p>
     </div>
+
+    <!-- Outro Section -->
     <div class="six">
-      <img src="img/fariha.png" alt="" class="lydia-dp" data-node-name="imagePath">
-      <img src="img/hat.svg" alt="" class="hat">
-      <div class="wish">
-        <h3 class="wish-hbd" data-node-name="wishHeading">Happy Birthday!</h3>
-        <h5 data-node-name="wishText">May the js.prototypes always be with you! ;)</h5>
-      </div>
+      <h2 class="wish-heading" data-node-name="wishHeading"></h2>
+      <p class="outro-text" data-node-name="outroText"></p>
+      <span class="outro-smiley" data-node-name="outroSmiley"></span>
     </div>
+
+    <!-- Replay Button -->
     <div class="seven">
-      <div class="baloons">
-        <img src="img/ballon2.svg" alt="">
-        <img src="img/ballon1.svg" alt="">
-        <img src="img/ballon3.svg" alt="">
-        <img src="img/ballon1.svg" alt="">
-        <img src="img/ballon2.svg" alt="">
-        <img src="img/ballon3.svg" alt="">
-        <img src="img/ballon2.svg" alt="">
-        <img src="img/ballon3.svg" alt="">
-        <img src="img/ballon1.svg" alt="">
-        <img src="img/ballon2.svg" alt="">
-        <img src="img/ballon3.svg" alt="">
-        <img src="img/ballon2.svg" alt="">
-        <img src="img/ballon1.svg" alt="">
-        <img src="img/ballon3.svg" alt="">
-        <img src="img/ballon2.svg" alt="">
-        <img src="img/ballon3.svg" alt="">
-        <img src="img/ballon1.svg" alt="">
-        <img src="img/ballon2.svg" alt="">
-        <img src="img/ballon1.svg" alt="">
-        <img src="img/ballon3.svg" alt="">
-        <img src="img/ballon3.svg" alt="">
-        <img src="img/ballon1.svg" alt="">
-        <img src="img/ballon2.svg" alt="">
-        <img src="img/ballon3.svg" alt="">
-        <img src="img/ballon2.svg" alt="">
-        <img src="img/ballon1.svg" alt="">
-        <img src="img/ballon3.svg" alt="">
-        <img src="img/ballon2.svg" alt="">
-        <img src="img/ballon3.svg" alt="">
-        <img src="img/ballon1.svg" alt="">
-        <img src="img/ballon2.svg" alt="">
-        <img src="img/ballon1.svg" alt="">
-        <img src="img/ballon3.svg" alt="">
-      </div>
+      <button id="replay" class="replay-btn" data-node-name="replayText"></button>
     </div>
+
+    <!-- Last Smile -->
     <div class="eight">
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
+      <span class="last-smile"></span>
     </div>
-    <div class="nine">
-      <p data-node-name="outroText">Okay, now come back and tell me if you liked it.</p>
-      <p id="replay" data-node-name="replayText">Or click, if you want to watch it again.</p>
-      <p class="last-smile" data-node-name="outroSmiley">:)</p>
+
+    <!-- Balloons -->
+    <div class="baloons">
+      <img src="img/balloon1.png" alt="Balloon 1">
+      <img src="img/balloon2.png" alt="Balloon 2">
+      <img src="img/balloon3.png" alt="Balloon 3">
+      <img src="img/balloon4.png" alt="Balloon 4">
     </div>
+
+    <!-- Lydia's Profile Picture -->
+    <div class="lydia-dp" data-node-name="imagePath"></div>
+
+    <!-- Hat -->
+    <img src="img/hat.png" class="hat" alt="Birthday Hat">
   </div>
 
-  <!-- Button to Start the Music -->
-  <button id="playMusic">Start the Celebration!</button>
-
+  <!-- Background Music -->
   <audio id="backgroundMusic" loop>
-    <source src="music/hbd.mp3" type="audio/mp3">
-    Your browser does not support the audio tag.
+    <source src="audio/background-music.mp3" type="audio/mp3">
   </audio>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
-  <script type="application/javascript" src="script/main.js"></script>
 
-  <script>
-    // Add event listener to play music on user interaction
-    const playButton = document.getElementById('playMusic');
-    const audio = document.getElementById('backgroundMusic');
-
-    playButton.addEventListener('click', () => {
-      audio.play();
-      playButton.style.display = 'none'; // Hide the button after music starts
-    });
-  </script>
+  <script src="scripts.js"></script>
 </body>
-
 </html>
