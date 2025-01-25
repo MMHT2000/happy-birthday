@@ -14,15 +14,17 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  position: fixed;  
-  bottom: 100px;    
-  left: 50%;        
-  transform: translateX(-50%); 
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000; /* Ensures the button is above other elements */
 }
 
 #startButton:hover {
   background-color: #45a049;
 }
+
 
 .container {
   height: 100vh;
