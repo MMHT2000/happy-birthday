@@ -1,65 +1,44 @@
-// Fetching data from customize.json
+// Import the data to customize and insert them into page
 const fetchData = () => {
   fetch("customize.json")
     .then(data => data.json())
     .then(data => {
       dataArr = Object.keys(data);
-      
-      // Looping through data and inserting it into the DOM
       dataArr.map(customData => {
         if (data[customData] !== "") {
           if (customData === "imagePath") {
             document
-              .querySelector(`[data-node-name*="${customData}"]`)
+              .querySelector([data-node-name*="${customData}"])
               .setAttribute("src", data[customData]);
           } else {
-            document.querySelector(`[data-node-name*="${customData}"]`).innerText = data[customData];
+            document.querySelector([data-node-name*="${customData}"]).innerText = data[customData];
           }
         }
 
-        // Check if the iteration is over and run animation when data is fully loaded
-        if (dataArr.length === dataArr.indexOf(customData) + 1) {
-          animationTimeline(); // Trigger animation timeline
+        // Check if the iteration is over
+        // Run amimation if so
+        if ( dataArr.length === dataArr.indexOf(customData) + 1 ) {
+          animationTimeline();
 
           const backgroundMusic = document.getElementById("backgroundMusic");
-          backgroundMusic.play(); // Play background music after animation
+          backgroundMusic.play();
         } 
       });
     });
 };
-
-// Function to play background music when the page loads
-let musicPlaying = false;
-const backgroundMusic = document.getElementById("backgroundMusic");
-
-const toggleMusic = () => {
-  if (musicPlaying) {
-    backgroundMusic.pause();
-  } else {
-    backgroundMusic.play();
-  }
-  musicPlaying = !musicPlaying;
-};
-
-// Function to add sound effects when changing content
-const playSoundEffect = (soundFile) => {
-  const audio = new Audio(soundFile);
-  audio.play();
-};
-
-// Enhanced animation timeline with smoother animations and effects
+// Animation Timeline
 const animationTimeline = () => {
+  // Spit chars that needs to be animated individually
   const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
   const hbd = document.getElementsByClassName("wish-hbd")[0];
 
-  // Split characters for animation
-  textBoxChars.innerHTML = `<span>${textBoxChars.innerHTML
+  textBoxChars.innerHTML = <span>${textBoxChars.innerHTML
     .split("")
-    .join("</span><span>")}</span>`;
+    .join("</span><span>")}</span;
 
-  hbd.innerHTML = `<span>${hbd.innerHTML
+  hbd.innerHTML = <span>${hbd.innerHTML
     .split("")
-    .join("</span><span>")}</span>`;
+    .join("</span><span>")}</span;
 
   const ideaTextTrans = {
     opacity: 0,
@@ -110,6 +89,7 @@ const animationTimeline = () => {
     .from(".three", 0.7, {
       opacity: 0,
       y: 10
+      // scale: 0.7
     })
     .to(
       ".three",
@@ -254,6 +234,7 @@ const animationTimeline = () => {
       {
         opacity: 0,
         y: -50,
+        // scale: 0.3,
         rotation: 150,
         skewX: "30deg",
         ease: Elastic.easeOut.config(1, 0.5)
@@ -313,6 +294,9 @@ const animationTimeline = () => {
       "+=1"
     );
 
+  // tl.seek("currentStep");
+  // tl.timeScale(2);
+
   // Restart Animation on click
   const replyBtn = document.getElementById("replay");
   replyBtn.addEventListener("click", () => {
@@ -320,5 +304,5 @@ const animationTimeline = () => {
   });
 };
 
-// Run fetchData and animation in sequence
+// Run fetch and animation in sequence
 fetchData();
