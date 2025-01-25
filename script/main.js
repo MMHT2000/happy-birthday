@@ -297,5 +297,13 @@ const animationTimeline = () => {
   });
 };
 
+document.getElementById("startButton").addEventListener("click", () => {
+  const backgroundMusic = document.getElementById("backgroundMusic");
+  backgroundMusic.play().catch(error => {
+    console.error("Audio play failed:", error);
+  });
+});
+
+
 // Run fetch and animation in sequence
 fetchData();
