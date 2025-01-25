@@ -15,7 +15,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   position: fixed;
-  bottom: 20px;
+  bottom: 100px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000; /* Ensures the button is above other elements */
