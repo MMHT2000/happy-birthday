@@ -302,6 +302,7 @@ document.getElementById("startButton").addEventListener("click", () => {
   backgroundMusic.play().catch(error => {
     console.error("Audio play failed:", error);
   });
+  document.getElementById("startButton").style.display = "none";
 });
 
 
